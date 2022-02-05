@@ -14,7 +14,7 @@ echo -e "#max-ttl=600\nneg-ttl=600\nmin-cache-ttl=3600" >> package/network/servi
 # mkdir package/base-files/files/config
 # echo 0xDEADBEEF > package/base-files/files/config/google_fu_mode
 # rm -rf package/lean/smartdns
-rm -rf package/diy/luci-app-dockerman
+# rm -rf package/diy/luci-app-dockerman
 # git clone -b lede https://github.com/pymumu/luci-app-smartdns.git feeds/luci/applications/luci-app-smartdns
 git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
 git clone https://github.com/kenzok8/small.git package/small
