@@ -16,8 +16,8 @@ on:
     inputs:
       ssh:
         description: 'SSH connection to Actions'
-        required: true
-        默认: 'true'
+        required: false
+        default: 'false'
   push:
     branches:
       - master
