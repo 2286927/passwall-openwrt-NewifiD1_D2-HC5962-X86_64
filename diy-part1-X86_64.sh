@@ -21,9 +21,9 @@ sed -i 's/192.168.1.1/7.1.1.1/g' package/base-files/files/bin/config_generate
 # git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-packages
 git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
 git clone https://github.com/kenzok8/small.git package/small
-git clone https://github.com/roacn/luci-app-cpufreq.git package/luci-app-cpufreq
-git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-git clone https://github.com/openwrt/docker.git package/docker
+# git clone https://github.com/roacn/luci-app-cpufreq.git package/luci-app-cpufreq
+# git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
+# git clone https://github.com/openwrt/docker.git package/docker
 # git clone https://github.com/coolsnowwolf/lede/tree/master/package/lean/luci-app-docker.git package/openwrt-packages
 # git clone https://github.com/jerrykuku/luci-app-ttnode.git package/openwrt-packages
 # git clone https://github.com/blacktitty-y/package/tree/main/lean.git package/openwrt-packages
