@@ -11,6 +11,8 @@ sed -i 's/192.168.1.1/5.1.1.1/g' package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/HiWiFi4E-one/g' package/base-files/files/bin/config_generate
 # DNS Cache FixUP
 echo -e "#max-ttl=600\nneg-ttl=600\nmin-cache-ttl=3600" >> package/network/services/dnsmasq/files/dnsmasq.conf
+# Set default root password
+# sed -i 's/root::0:0:99999:7:::/root:$1$kWRCl0Y2$7JL\/jLAF1xoVIiIMdTO5f.:16788:0:99999:7:::/g' package/base-files/files/etc/shadow
 # mkdir package/base-files/files/config
 # echo 0xDEADBEEF > package/base-files/files/config/google_fu_mode
 # rm -rf package/lean/smartdns
