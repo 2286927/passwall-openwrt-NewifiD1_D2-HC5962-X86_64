@@ -184,37 +184,37 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
-    - name: Package Armvirt as OpenWrt
-      uses: unifreq/openwrt_packit@master
-      env:
-        OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*.bin
-        PACKAGE_SOC: s905d_s905x3_s922x_vplus_beikeyun_l1pro_s912_mt7621
-        KERNEL_AUTO_LATEST:  true
-        # KERNEL_VERSION_NAME: 5.4.168_5.10.88_5.15.11_5.16.2_5.17.1
-        WHOAMI: Yuan
-        ENABLE_WIFI_K504: 0
-        ENABLE_WIFI_K510: 0
-        SW_FLOWOFFLOAD: 0
-        HW_FLOWOFFLOAD: 0
-        SFE_FLOW: 0
-        SELECT_PACKITPATH: openwrt_packit
-        SELECT_OUTPUTPATH: output
-        artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
+#   - name: Package as OpenWrt
+#     uses: unifreq/openwrt_packit@master
+#     env:
+#       OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*.bin
+#       PACKAGE_SOC: mt7621
+#        KERNEL_AUTO_LATEST:  true
+#        # KERNEL_VERSION_NAME: 5.4.168_5.10.88_5.15.11_5.16.2_5.17.1
+#        WHOAMI: Yuan
+#        ENABLE_WIFI_K504: 0
+#        ENABLE_WIFI_K510: 0
+#        SW_FLOWOFFLOAD: 0
+#        HW_FLOWOFFLOAD: 0
+#        SFE_FLOW: 0
+#        SELECT_PACKITPATH: openwrt_packit
+#        SELECT_OUTPUTPATH: output
+#        artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
 
-    - name: copy update files
-      run: |
-        cd /opt/openwrt_packit
-        sudo cp ./files/update*.sh ./output/
-        echo "::set-output name=status::success"
+#    - name: copy update files
+#      run: |
+#        cd /opt/openwrt_packit
+#        sudo cp ./files/update*.sh ./output/
+#        echo "::set-output name=status::success"
 
     - name: Upload OpenWrt Firmware to Release
       uses: ncipollo/release-action@v1
       with:
         name: NEWIFI_2_${{ env.PRODUCT_NAME }}${{ env.DATE }}
         tag: NEWIFI_2${{ env.FILE_NAME }}
-        artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
+        path: openwrt/bin/*.bin
         allowUpdates: true
-        removeArtifacts: true
+        #removeArtifacts: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
           This is OpenWrt firmware for ramips mipsle
