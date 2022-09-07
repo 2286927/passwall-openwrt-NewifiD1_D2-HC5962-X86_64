@@ -35,8 +35,8 @@ env:
   FEEDS_CONF: feedsx86.conf.default
 #  KERNEL_CONF: MenuConfig/config-5.4
   CONFIG_FILE: X86_64.config
-  DIY_P1_SH: diy-part1-X86_64.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_P1_SH: DIY/diy-part1.sh
+  DIY_P2_SH: DIY/diy-part2-X86_64.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -186,7 +186,7 @@ jobs:
       uses: dev-drprasad/delete-older-releases@v0.1.0
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 180
+        keep_latest: 14
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
