@@ -32,7 +32,7 @@ env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: 22.03
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: newifi2.config
+  CONFIG_FILE: MenuConfig/NewifiD2_Lienol_Bypass_route.config
   DIY_P1_SH: DIY/diy-part1.sh
   DIY_P2_SH: DIY/diy-part2-d1.sh
   UPLOAD_BIN_DIR: false
