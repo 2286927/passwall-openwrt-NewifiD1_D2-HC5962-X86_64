@@ -22,7 +22,7 @@ on:
     branches:
       - master
     paths:
-      - 'newifi2.config'
+      - 'MenuConfig/NewifiD2_Lienol_Bypass_route.config'
   schedule:
     - cron: 0 8 * * 5
   watch:
