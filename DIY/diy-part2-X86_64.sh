@@ -14,5 +14,5 @@ sed -i 's/OpenWrt/OpenWrt-D2550/g' package/base-files/files/bin/config_generate
 ####### Modify the version number
 sed -i "s/OpenWrt /Fndsz build from Lede $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 # zerotier1.8.4
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' feeds/packages/net/zerotier/Makefile
+# sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' feeds/packages/net/zerotier/Makefile
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' /openwrt/feeds/packages/net/zerotier/Makefile
