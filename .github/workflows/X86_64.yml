@@ -17,7 +17,6 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-#         required: false
         default: 'false'
   push:
     branches:
