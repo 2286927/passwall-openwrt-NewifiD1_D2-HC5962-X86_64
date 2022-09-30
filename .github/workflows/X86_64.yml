@@ -30,7 +30,7 @@ on:
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: 22.03
+  REPO_BRANCH: 21.02
   FEEDS_CONF: feedsx86.conf.default
 #  KERNEL_CONF: MenuConfig/config-5.4
   CONFIG_FILE: X86_64.config
