@@ -197,8 +197,8 @@ jobs:
     - name: Upload OpenWrt Firmware to Release
       uses: ncipollo/release-action@v1
       with:
-        name: OpenWrt_x86-immortalwrt ${{ env.PRODUCT_NAME }}${{ env.DATE }}
-        tag: OpenWrt_x86-immortalwrt${{ env.FILE_NAME }}
+        name: OpenWrt_x86_immortalwrt ${{ env.PRODUCT_NAME }}${{ env.DATE }}
+        tag: OpenWrt_x86_immortalwrt${{ env.FILE_NAME }}
         artifacts: ${{ env.FIRMWARE }}/*
         allowUpdates: true
         removeArtifacts: true
