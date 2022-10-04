@@ -184,14 +184,14 @@ jobs:
     - name: Upload OpenWrt Firmware to Release
       uses: ncipollo/release-action@v1
       with:
-        name: OpenWrt_x86_Docker ${{ env.PRODUCT_NAME }}${{ env.DATE }}
-        tag: OpenWrt_x86_Docker${{ env.FILE_NAME }}
+        name: OpenWrt_x86_Lienol ${{ env.PRODUCT_NAME }}${{ env.DATE }}
+        tag: OpenWrt_x86_Lienol${{ env.FILE_NAME }}
         artifacts: ${{ env.FIRMWARE }}/*
         allowUpdates: true
         removeArtifacts: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          * x86 精简固件
+          * x86_64 精简固件
           * 有Docker
           * Default IP: 192.168.1.1
           * Default username: root
