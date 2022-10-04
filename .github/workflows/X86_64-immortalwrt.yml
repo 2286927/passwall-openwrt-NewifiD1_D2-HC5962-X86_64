@@ -192,7 +192,8 @@ jobs:
         removeArtifacts: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          * x86 精简固件
+          * x86_64 精简固件
+          * 有Docker
           * Default IP: 192.168.1.1
           * Default username: root
           * Default password: password
