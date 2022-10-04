@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: X86_64_Docker
+name: X86_64_Lienol
 
 on:
   repository_dispatch:
