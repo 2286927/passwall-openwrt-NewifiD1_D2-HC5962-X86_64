@@ -33,7 +33,7 @@ env:
 #  REPO_BRANCH: openwrt-21.02
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: 22.03
-  FEEDS_CONF: feedsx86.conf.default
+  FEEDS_CONF: feeds.conf.default
 #  KERNEL_CONF: MenuConfig/config-5.4
   CONFIG_FILE: X86_64.config
   DIY_P1_SH: DIY/X86/diy-part1.sh
@@ -66,14 +66,12 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-        
     - name: Clone source code
       working-directory: /workdir
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
@@ -108,7 +106,6 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-        
     - name: Compile the firmware
       id: compile
       run: |
@@ -139,7 +136,6 @@ jobs:
         rm -rf packages config.buildinfo feeds.buildinfo sha256sums version.buildinfo *.manifest Packages.tar.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
-        
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
@@ -155,6 +151,7 @@ jobs:
 #        ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
 #        echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
 #        echo "::set-output name=url::$(cat cowtransfer.log | grep https | cut -f3 -d" ")"
+
 #    - name: Upload firmware to WeTransfer
 #      id: wetransfer
 #      if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
@@ -163,15 +160,17 @@ jobs:
 #        ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
 #        echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
 #        echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
+
 #    - name: Generate release tag
 #      id: tag
 #      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
 #      run: |
-#        echo "::set-output name=release_tag::MyX86-64-immortalwrt$(date +"%Y.%m.%d-%H%M")"
+#        echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
 #        touch release.txt
 #        [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
 #        [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
 #        echo "::set-output name=status::success"
+
 #    - name: Upload firmware to release
 #      uses: softprops/action-gh-release@v1
 #      if: steps.tag.outputs.status == 'success' && !cancelled()
@@ -182,21 +181,6 @@ jobs:
 #        body_path: release.txt
 #        files: ${{ env.FIRMWARE }}/*
 
-#    - name: Delete workflow runs
-#      uses: GitRML/delete-workflow-runs@main
-#      with:
-#        retain_days: 1
-#        keep_minimum_runs: 3
-
-#    - name: Remove old Releases
-#      uses: dev-drprasad/delete-older-releases@v0.1.0
-#      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-#      with:
-#        keep_latest: 8
-#        delete_tags: true
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
     - name: Upload OpenWrt Firmware to Release
       uses: ncipollo/release-action@v1
       with:
