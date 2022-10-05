@@ -33,7 +33,7 @@ env:
 #  REPO_BRANCH: stable
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-21.02
-  FEEDS_CONF: feedsx86.conf.default
+  FEEDS_CONF: feeds.conf.default
 #  KERNEL_CONF: MenuConfig/config-5.4
   CONFIG_FILE: X86_64-Lean.config
   DIY_P1_SH: DIY/diy-part1.sh
