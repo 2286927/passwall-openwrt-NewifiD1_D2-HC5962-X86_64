@@ -202,4 +202,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
           * 极路由4增强版固件
-          *Default username: root
+          * Default username: root
