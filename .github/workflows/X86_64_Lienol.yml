@@ -22,7 +22,7 @@ on:
     branches:
       - master
     paths:
-      - 'X86_64.config'
+      - 'X86_64_Lienol.config'
   schedule:
     - cron: 0 8 * * 5
   watch:
@@ -34,6 +34,7 @@ env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: 21.02
   FEEDS_CONF: feeds/Lienolfeeds.conf.default
+  KERNEL_URL: https://github.com/coolsnowwolf/lede/blob/master/target/linux/x86/config-6.0
 #  KERNEL_CONF: MenuConfig/config-5.4
   CONFIG_FILE: X86_64.config
   DIY_P1_SH: DIY/X86/diy-part1.sh
