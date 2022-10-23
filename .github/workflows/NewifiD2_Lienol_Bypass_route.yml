@@ -29,8 +29,10 @@ on:
     types: started
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: 21.02
+  #REPO_URL: https://github.com/Lienol/openwrt
+  #REPO_BRANCH: 21.02
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: MenuConfig/NewifiD2_Lienol_Bypass_route.config
   DIY_P1_SH: DIY/diy-part1.sh
