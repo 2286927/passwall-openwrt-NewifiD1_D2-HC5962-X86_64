@@ -33,7 +33,7 @@ env:
 #  REPO_BRANCH: stable
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-21.02
-  FEEDS_CONF: feeds.conf.default
+  FEEDS_CONF: feeds/immortalwrtfeeds.conf.default
 #  KERNEL_CONF: MenuConfig/config-5.4
   CONFIG_FILE: X86_64-Lean.config
   DIY_P1_SH: DIY/diy-part1.sh
@@ -73,7 +73,7 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Load custom feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/immortalwrtfeeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
