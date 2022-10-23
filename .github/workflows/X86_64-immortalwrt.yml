@@ -22,7 +22,7 @@ on:
     branches:
       - master
     paths:
-      - 'X86_64-Lean.config'
+      - 'X86_64.config'
   schedule:
     - cron: 0 8 * * 5
   watch:
