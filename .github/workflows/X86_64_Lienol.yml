@@ -37,7 +37,7 @@ env:
 #  KERNEL_CONF: MenuConfig/config-5.4
   CONFIG_FILE: X86_64.config
   DIY_P1_SH: DIY/X86/diy-part1.sh
-  DIY_P2_SH: DIY/diy-part2-X86_64.sh
+  DIY_P2_SH: DIY/diy-part2-X86_64_Lienol.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
