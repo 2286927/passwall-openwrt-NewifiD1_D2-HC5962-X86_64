@@ -34,6 +34,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds/immortalwrtfeeds.conf.default
+  KERNEL_URL: https://github.com/coolsnowwolf/lede/blob/master/target/linux/x86/config-6.0
 #  KERNEL_CONF: MenuConfig/config-5.4
   CONFIG_FILE: X86_64.config
   DIY_P1_SH: DIY/diy-part1.sh
