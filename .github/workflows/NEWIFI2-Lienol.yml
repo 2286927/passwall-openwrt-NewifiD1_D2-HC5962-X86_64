@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: NEWIFI 2
+name: NEWIFI2-Lienol
 
 on:
   repository_dispatch:
@@ -194,8 +194,8 @@ jobs:
     - name: Upload OpenWrt Firmware to Release
       uses: ncipollo/release-action@v1
       with:
-        name: newifi2-Lienol ${{ env.PRODUCT_NAME }}${{ env.DATE }}
-        tag: newifi2-Lienol${{ env.FILE_NAME }}
+        name: NEWIFI2-Lienol ${{ env.PRODUCT_NAME }}${{ env.DATE }}
+        tag: NEWIFI2-Lienol${{ env.FILE_NAME }}
         artifacts: ${{ env.FIRMWARE }}/*
         allowUpdates: true
         removeArtifacts: true
