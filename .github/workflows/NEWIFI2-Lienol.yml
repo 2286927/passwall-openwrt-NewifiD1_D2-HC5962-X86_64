@@ -202,4 +202,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
           * newifi2-Lienol固件
-          *Default username: root
+          * Default username: root
