@@ -180,8 +180,8 @@ jobs:
     - name: Upload OpenWrt Firmware to Release
       uses: ncipollo/release-action@v1
       with:
-        name: NEWIFI D2 ${{ env.PRODUCT_NAME }}${{ env.DATE }}
-        tag: NEWIFI D2${{ env.FILE_NAME }}
+        name: NEWIFI_D2-immortalwrt ${{ env.PRODUCT_NAME }}${{ env.DATE }}
+        tag: NEWIFI_D2-immortalwrt${{ env.FILE_NAME }}
         artifacts: ${{ env.FIRMWARE }}/*
         allowUpdates: true
         removeArtifacts: true
