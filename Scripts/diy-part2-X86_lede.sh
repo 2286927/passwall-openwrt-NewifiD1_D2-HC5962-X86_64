@@ -17,6 +17,9 @@ echo "DISTRIB_DESCRIPTION='OpenWrt 21.02-SNAPSHOT'" >> package/base-files/files/
 sed -i "s/OpenWrt /洲·Cy build from immortalwrt $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/base-files/files/etc/openwrt_release
 # 修改连接数
 sed -i 's/net.netfilter.nf_conntrack_max=.*/net.netfilter.nf_conntrack_max=165535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
+# 修改机器初始密码
+sed -i 's/root::0:0:99999:7:::/root::0:0:99999:7:::/g' package/base-files/files/etc/shadow
+sed -i 's/root:x:0:0:root:/root::0:0:root:/g' package/base-files/files/etc/passwd
 # zerotier1.8.4
 # sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' feeds/packages/net/zerotier/Makefile
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' /openwrt/feeds/packages/net/zerotier/Makefile
