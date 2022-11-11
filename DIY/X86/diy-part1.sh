@@ -13,6 +13,7 @@
 # Add additional packages
 git clone --depth=1 https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
 git clone --depth=1 https://github.com/kenzok8/small.git package/small
+git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2.git package/openwrt-passwall2
 # git clone --depth=1 -b luci https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
 # git clone --depth=1 https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
