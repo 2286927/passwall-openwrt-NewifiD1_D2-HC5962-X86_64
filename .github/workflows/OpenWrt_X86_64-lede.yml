@@ -135,7 +135,7 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
-        rm -rf packages config.buildinfo feeds.buildinfo sha256sums version.buildinfo *.manifest Packages.tar.gz
+#        rm -rf packages config.buildinfo feeds.buildinfo sha256sums version.buildinfo *.manifest Packages.tar.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::setOutput name=status::success"
     - name: Upload firmware directory
@@ -193,7 +193,7 @@ jobs:
         removeArtifacts: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          * x86 精简固件
+          * x86_64
           * 有Docker
           * Default IP: 192.168.1.1
           * Default username: root
