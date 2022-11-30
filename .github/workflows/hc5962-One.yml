@@ -203,5 +203,5 @@ jobs:
         removeArtifacts: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          * 极路由4增强版固件
+          * 极路由4增强版固件YHF
           * Default username: root
