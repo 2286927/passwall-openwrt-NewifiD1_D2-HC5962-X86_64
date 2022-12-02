@@ -22,5 +22,3 @@ sed -i 's/net.netfilter.nf_conntrack_max=.*/net.netfilter.nf_conntrack_max=16553
 # zerotier1.8.4
 # sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' feeds/packages/net/zerotier/Makefile
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' /openwrt/feeds/packages/net/zerotier/Makefile
-# ADD Samba
-git clone https://github.com/Lienol/openwrt-luci/tree/21.02/applications/luci-app-samba.git package/samba
