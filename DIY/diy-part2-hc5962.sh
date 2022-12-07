@@ -16,7 +16,7 @@ sed -i 's/immortalwrt/Newifi-D1/g' package/base-files/files/bin/config_generate
 #sed -i "s/OpenWrt /洲•Cy build from Lienol $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/default-settings/files/zzz-default-settings
 ####### Modify the version number
 sed -i '/DISTRIB_DESCRIPTION/d' package/base-files/files/etc/openwrt_release
-echo "DISTRIB_DESCRIPTION='OpenWrt %V'" >> package/base-files/files/etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='OpenWrt $('+%V')'" >> package/base-files/files/etc/openwrt_release
 sed -i "s/OpenWrt /洲·Cy build from Lienol $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/base-files/files/etc/openwrt_release
 # sed -i "s/\'%D %V %C\'/洲·Cy build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/base-files/files/etc/openwrt_release
 # 修改连接数
