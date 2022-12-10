@@ -29,10 +29,10 @@ on:
     types: started
 
 env:
-  #REPO_URL: https://github.com/Lienol/openwrt
-  #REPO_BRANCH: 21.02
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/Lienol/openwrt
+  REPO_BRANCH: 21.02
+  #REPO_URL: https://github.com/coolsnowwolf/lede
+  #REPO_BRANCH: master
   FEEDS_CONF: feeds/feeds.conf.default
   CONFIG_FILE: hc5962.config
   DIY_P1_SH: DIY/diy-part1.sh
