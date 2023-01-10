@@ -20,8 +20,10 @@
 #git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
 #git clone https://github.com/kenzok8/small.git package/small
 #git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
-git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 git clone https://github.com/kenzok8/small-package package/small-package
+#git clone https://github.com/bootli/luci-app-turboacc.git package/small-package/luci-app-turboacc
+git clone https://github.com/deplives/luci-app-turboacc.git package/small-package/luci-app-turboacc
+git clone https://github.com/bootli/luci-app-ddns-go.git package/ddns-go
 # sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 # git clone https://github.com/garypang13/luci-app-bypass.git package/luci-app-bypass
 # git clone https://github.com/garypang13/smartdns-le package/smartdns-le
