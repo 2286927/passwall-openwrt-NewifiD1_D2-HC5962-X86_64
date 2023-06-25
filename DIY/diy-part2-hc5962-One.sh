@@ -26,3 +26,14 @@ sed -i 's/net.netfilter.nf_conntrack_max=.*/net.netfilter.nf_conntrack_max=16553
 # zerotier1.8.4
 # sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' feeds/packages/net/zerotier/Makefile
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' /openwrt/feeds/packages/net/zerotier/Makefile
+
+#
+####################################
+# firewall3/4 的luci-app-socat
+####################################
+#
+svn export --force https://github.com/chenmozhijin/luci-app-socat/trunk/luci-app-socat feeds/luci/applications/luci-app-socat
+#
+####################################
+# firewall3/4 的luci-app-socat of End
+####################################
