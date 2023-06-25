@@ -29,3 +29,28 @@ git clone https://github.com/kenzok8/small.git package/small
 # wget -P package/redsocks2 https://raw.githubusercontent.com/coolsnowwolf/lede/master/package/lean/redsocks2/Makefile
 # find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 # find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
+
+####################################
+### Turbo ACC-[openwrt(22.03/23.05)]
+####################################
+mkdir -p turboacc_tmp ./package/turboacc
+cd turboacc_tmp 
+git clone https://github.com/chenmozhijin/turboacc -b package
+cd ../package/turboacc
+git clone https://github.com/fullcone-nat-nftables/nft-fullcone
+git clone https://github.com/chenmozhijin/turboacc
+mv ./turboacc/luci-app-turboacc ./luci-app-turboacc
+rm -rf ./turboacc
+cd ../..
+cp turboacc_tmp/turboacc/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch ./target/linux/generic/hack-5.15
+cp turboacc_tmp/turboacc/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch ./target/linux/generic/hack-5.15
+rm -rf ./package/libs/libnftnl ./package/network/config/firewall4 ./package/network/utils/nftables
+mkdir -p ./package/network/config/firewall4 ./package/libs/libnftnl ./package/network/utils/nftables
+cp -r ./turboacc_tmp/turboacc/shortcut-fe ./package/turboacc
+cp -RT ./turboacc_tmp/turboacc/firewall4-04a06bd70b9808b14444cae81a2faba4708ee231/firewall4 ./package/network/config/firewall4
+cp -RT ./turboacc_tmp/turboacc/libnftnl-1.2.5/libnftnl ./package/libs/libnftnl
+cp -RT ./turboacc_tmp/turboacc/nftables-1.0.7/nftables ./package/network/utils/nftables
+rm -rf turboacc_tmp
+####################################
+### Turbo ACC of End
+####################################
