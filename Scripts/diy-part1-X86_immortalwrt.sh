@@ -11,6 +11,7 @@ sed -i 's/192.168.1.1/172.16.99.1/g' package/base-files/files/bin/config_generat
 echo -e "#max-ttl=600\nneg-ttl=600\nmin-cache-ttl=3600" >> package/network/services/dnsmasq/files/dnsmasq.conf
 # 修改机器名称
 sed -i 's/OpenWrt/OpenWrt-D2550/g' package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/ImmortalWrt-D2550/g' package/base-files/files/bin/config_generate
 ####### Modify the version number
 sed -i '/DISTRIB_DESCRIPTION/d' package/base-files/files/etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='ImmortalWrt $('%V')'" >> package/base-files/files/etc/openwrt_release
