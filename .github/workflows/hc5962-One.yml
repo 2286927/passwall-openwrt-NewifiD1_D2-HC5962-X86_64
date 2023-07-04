@@ -23,8 +23,8 @@ on:
       - master
     paths:
       - 'hc5962-One.config'
-  schedule:
-    - cron: 0 8 * * 5
+  #schedule:
+  #  - cron: 0 8 * * 5
   watch:
     types: started
 
