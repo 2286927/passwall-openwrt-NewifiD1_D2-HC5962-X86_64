@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: HiWiFI4E
+name: hc5962-Lienol
 
 on:
   repository_dispatch:
@@ -22,7 +22,7 @@ on:
     branches:
       - master
     paths:
-      - 'hc5962.config'
+      - 'MenuConfig/hc5962-Lienol.config'
   #schedule:
   #  - cron: 0 8 * * 5
   watch:
@@ -36,7 +36,7 @@ env:
   #REPO_URL: https://github.com/immortalwrt/immortalwrt
   #REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds/feeds.conf.default
-  CONFIG_FILE: hc5962.config
+  CONFIG_FILE: MenuConfig/hc5962-Lienol.config
   DIY_P1_SH: DIY/diy-part1.sh
   DIY_P2_SH: DIY/diy-part2-hc5962.sh
   UPLOAD_BIN_DIR: true
@@ -198,12 +198,13 @@ jobs:
     - name: Upload OpenWrt Firmware to Release
       uses: ncipollo/release-action@v1
       with:
-        name: HiWiFI4E ${{ env.PRODUCT_NAME }}${{ env.DATE }}
-        tag: HiWiFI4E${{ env.FILE_NAME }}
+        name: hc5962-Lienol ${{ env.PRODUCT_NAME }}${{ env.DATE }}
+        tag: hc5962-Lienol${{ env.FILE_NAME }}
         artifacts: ${{ env.FIRMWARE }}/*
         allowUpdates: true
         removeArtifacts: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          * 极路由4增强版固件LYH
+          * HiWiFI4E极路由4增强版Lienol固件LYH
+          * REPO_BRANCH: 21.02
           * Default username: root
