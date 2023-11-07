@@ -206,4 +206,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
           * newifi3固件
-          *Default username: root
+          * Lienol OpenWrt 22.03-SNAPSHOT
