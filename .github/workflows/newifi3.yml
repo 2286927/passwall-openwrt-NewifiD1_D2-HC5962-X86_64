@@ -206,4 +206,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
           * newifi3固件
-          * Lienol OpenWrt 22.03-SNAPSHOT
+          * immortalwrt OpenWrt 23.05-SNAPSHOT
