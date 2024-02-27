@@ -23,6 +23,7 @@ rm -rf package/openwrt-packages/luci-app-adguardhome
 rm -rf package/openwrt-packages/adguardhome
 rm -rf package/openwrt-packages/luci-app-ddns-go
 rm -rf package/openwrt-packages/ddns-go
+rm -rf feeds/packages/net/adguardhome
 #git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 #git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 # git clone https://github.com/kenzok8/small-package package/small-package
