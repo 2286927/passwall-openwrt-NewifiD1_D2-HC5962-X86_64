@@ -41,8 +41,8 @@ env:
   CONFIG_FILE: MenuConfig/hc5861.config
   DIY_P1_SH: DIY/diy-part1-immortalwrt.sh
   DIY_P2_SH: Scripts/hc5861.sh
-  UPLOAD_BIN_DIR: true
-  UPLOAD_FIRMWARE: true
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
