@@ -11,6 +11,7 @@ sed -i 's/192.168.1.1/172.16.6.1/g' package/base-files/files/bin/config_generate
 echo -e "#max-ttl=600\nneg-ttl=600\nmin-cache-ttl=3600" >> package/network/services/dnsmasq/files/dnsmasq.conf
 ###### Modify hostname
 sed -i 's/OpenWrt/Newifi-D2/g' package/base-files/files/bin/config_generate
+sed -i 's/ImmortalWrt/Newifi-D2/g' package/base-files/files/bin/config_generate
 ####### Modify the version number
 #sed -i "s/OpenWrt /Fndsz build from Lienol $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/default-settings/files/zzz-default-settings
 # zerotier1.8.4
