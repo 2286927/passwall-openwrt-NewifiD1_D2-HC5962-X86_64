@@ -31,7 +31,10 @@ sed -i 's/net.netfilter.nf_conntrack_max=.*/net.netfilter.nf_conntrack_max=16553
 # zerotier1.8.4
 # sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' feeds/packages/net/zerotier/Makefile
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.8.4/g' /openwrt/feeds/packages/net/zerotier/Makefile
-
+#
+rm -rf package/small/dns2socks
+rm -rf package/small/dns2tcp
+#
 #
 ####################################
 # firewall3/4 的luci-app-socat
