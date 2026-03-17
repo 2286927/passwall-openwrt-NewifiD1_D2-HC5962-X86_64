@@ -17,6 +17,7 @@
 # echo 0xDEADBEEF > package/base-files/files/config/google_fu_mode
 # rm -rf package/lean/smartdns
 # git clone -b lede https://github.com/pymumu/luci-app-smartdns.git feeds/luci/applications/luci-app-smartdns
+git clone https://github.com/OneNAS-space/luci-app-adguardhome package/openwrt-packages/luci-app-adguardhome
 git clone https://github.com/kenzok8/openwrt-packages.git package/openwrt-packages
 git clone https://github.com/kenzok8/small.git package/small
 rm -rf package/openwrt-packages/luci-app-adguardhome
